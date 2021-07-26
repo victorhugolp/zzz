@@ -22,7 +22,7 @@
                         <input type="text" name="login" placeholder="NOME DE USUÁRIO">
                         <input type="password" name="password" placeholder="SENHA">
                         <div class="button">
-                            <button type="submit" disabled>&#x279C;</button>
+                            <button id="login-btn" type="button" disabled>&#x279C;</button>
                         </div>
                     </form>
                 </div>
@@ -35,6 +35,34 @@
             <div class="background-container">
                 <div class="background-alert"></div>
             </div>
-        </div>        
+        </div>
+
+        <script>
+            document.querySelector('#login-btn').addEventListener('click', async () => {
+                let token = localStorage.getItem('token');
+
+                try {
+                    form = document.getElementById("login")
+
+                    let username = form.children[0].value;
+                    let pass = form.children[1].value;
+
+                    let response = await axios.post('https://reqres.in/api/login', {
+                        email: username,
+                        password: pass
+                    });
+
+                    if (json.data.token) {
+                        token = json.data.token;
+                        localStorage.setItem('token', token);
+                        localStorage.setItem('active', json.status);
+                    }
+                }
+                catch (e) {
+
+                }
+             });
+        </script>
+
     </body>
 </html>

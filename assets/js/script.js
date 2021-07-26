@@ -1,7 +1,5 @@
 function check() {
-    console.log("To aqui");
     form = document.getElementById("login")
-    console.log(form.children[1].value);
     let login = form.children[0].value
     let password = form.children[1].value
     let button = form.children[2].children[0]
