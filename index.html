@@ -1,68 +1,127 @@
 <!DOCTYPE html>
-<html lang="pr-br">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="./assets/stylesheet/style.css" />
-        <script type="text/javascript" src="./assets/js/script.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-        <title>League of Legends</title>
-    </head>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Razer United States</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="./img/logo.png" />    
+  
+</head>
+<body>
 
-    <body>
-        <div class="container">
-            <div class="login-container">
-                <div class="login-top">
-                    <img src="./assets/image/logo-lol.png" width="40" alt="Logo League of Legends">
-                </div>
+<!-- Header -->
+<div class="header">       
 
-                <div class="login-body">
-                    <p>LOGIN</p>
-                    
-                    <form onkeyup="check()" id="login" autocomplete="off">
-                        <input type="text" name="login" placeholder="NOME DE USUÁRIO">
-                        <input type="password" name="password" placeholder="SENHA">
-                        <div class="button">
-                            <button id="login-btn" type="button" disabled>&#x279C;</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="logo">
+        <span>
+            <img id="logo" src="./img/logo.png">     
+        </span>
+    </div>
+      
+   
+<!-- Botões Header -->
 
-                <div class="login-bottom">
-                    <p class="versão">P2 - Web</p>
-                </div>
+<div class="login-container">
+
+    <div class="login-body">
+     
+        
+        <form onkeyup="check()" id="login" autocomplete="off">
+            <h1 class="login">Login</h1>
+            <div class="colLog"><input id="email" type="text" name="login" placeholder="NOME DE USUÁRIO">
+                <br>
+            <input id="senha" type="password" name="password" placeholder="SENHA">
             </div>
-            
-            <div class="background-container">
-                <div class="background-alert"></div>
+            <br>
+            <div class="button">
+                <button id="login-btn" type="button" disabled>Enviar</button>
             </div>
+        </form>
+    </div>
+
+    
+</div>
+<style>
+    button{width: 100%;
+        cursor: pointer;
+    }
+
+</style>
+<div>
+    
+</div>
+<div class="background-container">
+    <div class="background-alert" style="font-size"> aaaaaaaaaaaaa</div>
+</div>
+
+
+
+    <button class="botao" id="pcButton">PC</button>
+    <button class="botao" id="consoleButton">Console</button>
+    <button class="botao" id="mobileButton">Mobile</button>
+    <button class="botao" id="lifeStyleButton">LifeStyle</button>
+    <button class="botao" id="servicesButton">Services</button>
+    <button class="botao" id="communityButton">Community</button>
+    <input class="campo" type="text" name = "pesquisa">
+    <button class="botao" id="supportButton">Support</button>
+
+    <div class="botao">
+      <span>
+          <img id="search" src="./img/search.png" onclick="buscaApi()">     
+      </span>
+    </div>
+    
+    <div class="botao">
+      <span>
+          <img id="market" src="./img/market.png">     
+      </span>
+    </div>
+</div>
+
+    <!-- Mid -->
+   
+    <div class="mid-container1">
+        <h1>RazerStore Rewards Members Exclusive: Enjoy 20% off with a $200 minimum spend on selected products.  Join Now ></h1>    
+    </div>
+    <div class="mid">                    
+        <div class="mid-container2">
+            <div class="cont-2">
+                <h1>OUTPLAY YOUR COMPETITION </h1>  
+                <h2>ELEVATE YOUR GAME WITH THESE UPGRADES</h2> 
+                <a href="" class="botao">Shop Exclusive Deals > </a>                
+            </div>                           
         </div>
+    </div>            
 
-        <script>
-            document.querySelector('#login-btn').addEventListener('click', async () => {
-                let token = localStorage.getItem('token');
+ <!-- Section -->
+    <section class="section">
+      <div class="container">
+        <div class="grid">
+          <div>
+            <h1>NEW RAZER BLADE 15</h1>            
+          </div>          
+        </div>
+      </div>
+    </section>
 
-                try {
-                    form = document.getElementById("login")
+    <style> .fund{
+        background-image: linear-gradient(45deg, green,rgba(0, 132, 255, 0.644));
+        
+    }
+    
+    
+    </style> 
+    <div class="fund">
+        
+        <input type="text" class="pokename">
 
-                    let username = form.children[0].value;
-                    let pass = form.children[1].value;
+        <input type="text" class="poketip">
 
-                    let response = await axios.post('https://reqres.in/api/login', {
-                        email: username,
-                        password: pass
-                    });
-
-                    if (json.data.token) {
-                        token = json.data.token;
-                        localStorage.setItem('token', token);
-                        localStorage.setItem('active', json.status);
-                    }
-                }
-                catch (e) {
-
-                }
-             });
-        </script>
-
-    </body>
+        <input type="text" class="pokehab">
+    </div>
+    
+    <script src="jav.js"></script>
+</body>
 </html>
+
